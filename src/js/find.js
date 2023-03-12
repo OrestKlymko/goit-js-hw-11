@@ -69,8 +69,9 @@ moreBtn.addEventListener('click',async ()=>{
       Notiflix.Notify.success(`Hooray! We found ${newArray.length} images.`)
       const renderOne = newArray.map((item) => {
 
-        return `<a href='${item.largeImageURL}'><div class='photo-card'>
-  <img src='${item.webformatURL}' alt='${item.tags}' loading='lazy' />
+        return `<a href='${item.largeImageURL}' style='display: block;' >
+<div class='photo-card gallery__item' >
+  <img src='${item.webformatURL}' alt='${item.tags}' loading='lazy' class='gallery__image' />
   <div class='info'>
     <p class='info-item'>
       <b>Likes: ${item.likes}</b>
@@ -105,14 +106,8 @@ moreBtn.addEventListener('click',async ()=>{
 
 
 
-window.addEventListener('scroll',()=>{
-  const { height: cardHeight } = gallery
-    .firstElementChild.getBoundingClientRect();
-  window.scrollBy({
-    top: cardHeight*2000,
-    behavior: "smooth",
-  });
-})
+
+
 
 
 
