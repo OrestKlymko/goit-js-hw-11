@@ -108,7 +108,6 @@ moreBtn.addEventListener('click',async ()=>{
 window.addEventListener('scroll',()=>{
   const { height: cardHeight } = gallery
     .firstElementChild.getBoundingClientRect();
-console.log(gallery.firstElementChild.getBoundingClientRect().top)
   window.scrollBy({
     top: cardHeight*2000,
     behavior: "smooth",
