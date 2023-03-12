@@ -22,9 +22,9 @@ form.addEventListener('submit', async (e)=> {
         moreBtn.style.display='block';
         const renderOne = resultOfFetch.map((item) => {
 
-          return `<a href='${item.largeImageURL}'>
-<div class='photo-card'>
-  <img src='${item.webformatURL}' alt='${item.tags}' loading='lazy' />
+          return `<a href='${item.largeImageURL}' style='display: block;' >
+<div class='photo-card gallery__item' >
+  <img src='${item.webformatURL}' alt='${item.tags}' loading='lazy' class='gallery__image' />
   <div class='info'>
     <p class='info-item'>
       <b>Likes: ${item.likes}</b>
@@ -108,9 +108,9 @@ moreBtn.addEventListener('click',async ()=>{
 window.addEventListener('scroll',()=>{
   const { height: cardHeight } = gallery
     .firstElementChild.getBoundingClientRect();
-
+console.log(gallery.firstElementChild.getBoundingClientRect().top)
   window.scrollBy({
-    top: cardHeight * 200,
+    top: cardHeight*2000,
     behavior: "smooth",
   });
 })
